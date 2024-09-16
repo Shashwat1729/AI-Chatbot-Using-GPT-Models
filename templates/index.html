@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI-Powered Chatbot</h1>
+        <form action="/ask" method="POST">
+            <label for="user_input">Ask me anything:</label>
+            <input type="text" name="user_input" id="user_input" required>
+            <button type="submit">Submit</button>
+        </form>
+        {% if bot_response %}
+        <div class="response">
+            <h2>Response:</h2>
+            <p>{{ bot_response }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
